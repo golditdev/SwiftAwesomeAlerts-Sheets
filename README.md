@@ -7,7 +7,7 @@
 </a>
 </p>
 
-# Alerts & Pickers
+# Alerts & Sheets
 
 Advanced usage of native UIAlertController with TextField, TextView, DatePicker, PickerView, TableView, CollectionView and MapView.
 
