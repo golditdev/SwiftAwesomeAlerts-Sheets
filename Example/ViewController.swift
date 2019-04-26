@@ -99,7 +99,7 @@ class ViewController: UIViewController {
     
     // MARK: Properties
     
-    fileprivate var alertStyle: UIAlertControllerStyle = .actionSheet
+    fileprivate var alertStyle: UIAlertController.Style = .actionSheet
     
     fileprivate lazy var segments: SegmentedControl = {
         let styles: [String] = ["Alert", "ActionSheet"]
@@ -120,12 +120,9 @@ class ViewController: UIViewController {
         $0.register(TypeOneCell.self, forCellWithReuseIdentifier: TypeOneCell.identifier)
         $0.showsVerticalScrollIndicator = false
         $0.showsHorizontalScrollIndicator = false
-        $0.decelerationRate = UIScrollViewDecelerationRateFast
-        //$0.contentInsetAdjustmentBehavior = .never
+        $0.decelerationRate = UIScrollView.DecelerationRate.fast
         $0.bounces = true
         $0.backgroundColor = .white
-        //$0.maskToBounds = false
-        //$0.clipsToBounds = false
         $0.contentInset.bottom = UI.itemHeight
         return $0
         }(UICollectionView(frame: .zero, collectionViewLayout: layout))
@@ -143,7 +140,6 @@ class ViewController: UIViewController {
         return CGSize(width: width, height: UI.itemHeight)
     }
     
-    // MARK: Initialize
     
     required init() {
         super.init(nibName: nil, bundle: nil)
@@ -153,7 +149,6 @@ class ViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: ViewController LifeCycle
     
     override func loadView() {
         view = collectionView
